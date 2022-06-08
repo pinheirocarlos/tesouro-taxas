@@ -1,3 +1,33 @@
-server:
-  servlet:
-      context-path: /api
+feign:
+  client:
+    config:
+      default:
+        connectTimeout: 5000
+        readTimeout: 5000
+        loggerLevel: FULL
+
+titulos:
+  url: https://pinheiro.free.beeceptor.com
+
+logging:
+  level:
+    org:
+      springframework:
+        web: DEBUG
+
+spring:
+  mvc:
+    log-request-details: true
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health, info , beans , *
+  endpoint:
+    metrics:
+      enabled: true
+    health:
+      show-details: always
+    beans:
+      enabled: true
