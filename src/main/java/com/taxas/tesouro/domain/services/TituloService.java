@@ -1,5 +1,6 @@
 package com.taxas.tesouro.domain.services;
 
+import com.taxas.tesouro.application.exception.IntegrationException;
 import com.taxas.tesouro.domain.response.Titulos;
 import com.taxas.tesouro.infrastructure.feign.TitulosClient;
 import org.slf4j.Logger;
@@ -30,6 +31,7 @@ public class TituloService {
             titulos = titulosClient.getTitulos();
         } catch (Exception e) {
             LOG.error("Error on integration: " + e.getMessage());
+            throw new IntegrationException("Error while retrieving data " + e.getLocalizedMessage());
         }
         LOG.info("Retrieve data with success");
         return titulos;
