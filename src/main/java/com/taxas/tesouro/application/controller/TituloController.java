@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 @RestController
-@RequestMapping
+@RequestMapping("/api")
 public class TituloController {
 
     private TituloService tituloService;
@@ -18,7 +18,7 @@ public class TituloController {
         this.tituloService = tituloService;
     }
 
-    @GetMapping("/api/v1/titulos")
+    @GetMapping("/v1/titulos")
     public List<Titulos> getAll() {
        return tituloService.retrieveTitulos();
     }

@@ -13,6 +13,7 @@ logging:
   level:
     org:
       springframework:
+        cache: TRACE
         web: DEBUG
 
 spring:
@@ -31,3 +32,8 @@ management:
       show-details: always
     beans:
       enabled: true
+
+cache:
+  expiration:
+    minutes: 2
+

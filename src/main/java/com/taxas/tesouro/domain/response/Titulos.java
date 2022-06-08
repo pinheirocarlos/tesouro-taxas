@@ -2,8 +2,10 @@ package com.taxas.tesouro.domain.response;
 
 import lombok.Data;
 
+import java.io.Serializable;
+
 @Data
-public class Titulos {
+public class Titulos implements Serializable {
     private String nome;
     private String rentabilidade;
     private Double investimentoMinimo;
